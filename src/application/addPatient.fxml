@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="580.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.patient">
+      <children>
+         <Label layoutX="49.0" layoutY="90.0" text="No." />
+         <Label layoutX="49.0" layoutY="126.0" text="Date" />
+         <TextField fx:id="pid" layoutX="99.0" layoutY="85.0" prefHeight="25.0" prefWidth="120.0" />
+         <DatePicker fx:id="date" layoutX="99.0" layoutY="121.0" prefHeight="25.0" prefWidth="120.0" />
+         <Label layoutX="74.0" layoutY="28.0" text="Registration ID">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <Label layoutX="72.0" layoutY="202.0" text="Patient's Information">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <Label layoutX="50.0" layoutY="250.0" text="Name" />
+         <Label layoutX="50.0" layoutY="291.0" text="Gender" />
+         <Label layoutX="50.0" layoutY="335.0" text="Age" />
+         <Label layoutX="50.0" layoutY="375.0" text="Mobile No." />
+         <TextField fx:id="name" layoutX="140.0" layoutY="245.0" prefHeight="25.0" prefWidth="200.0" />
+         <RadioButton fx:id="male" layoutX="140.0" layoutY="290.0" mnemonicParsing="false" selected="true" text="Male">
+         <toggleGroup>
+            <ToggleGroup fx:id="gender" />
+         </toggleGroup></RadioButton>
+         <RadioButton fx:id="female" layoutX="230.0" layoutY="290.0" mnemonicParsing="false" text="Female" toggleGroup="$gender" />
+         <TextField fx:id="age" layoutX="140.0" layoutY="330.0" prefHeight="25.0" prefWidth="200.0" />
+         <TextField fx:id="mobile" layoutX="140.0" layoutY="370.0" prefHeight="25.0" prefWidth="200.0" />
+         <TextArea fx:id="address" layoutX="140.0" layoutY="410.0" prefHeight="90.0" prefWidth="200.0" />
+         <Label layoutX="50.0" layoutY="415.0" text="Address" />
+         <Separator layoutX="376.0" layoutY="25.0" orientation="VERTICAL" prefHeight="538.0" prefWidth="7.0" />
+         <Separator layoutX="192.0" layoutY="37.0" prefHeight="3.0" prefWidth="25.0" />
+         <Separator layoutX="16.0" layoutY="37.0" prefHeight="3.0" prefWidth="46.0" />
+         <Separator layoutX="239.0" layoutY="211.0" prefHeight="3.0" prefWidth="120.0" />
+         <Separator layoutX="14.0" layoutY="210.0" prefHeight="3.0" prefWidth="46.0" />
+         <Label layoutX="50.0" layoutY="520.0" text="Disease" />
+         <TextField fx:id="disease" layoutX="140.0" layoutY="515.0" prefHeight="25.0" prefWidth="200.0" />
+         <Separator layoutX="240.0" layoutY="25.0" orientation="VERTICAL" prefHeight="150.0" prefWidth="7.0" />
+         <Label layoutX="260.0" layoutY="28.0" text="Room Type">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <RadioButton fx:id="nonAc" layoutX="252.0" layoutY="81.0" mnemonicParsing="false" onAction="#setRoomPrice" text="Non A/C">
+         <toggleGroup>
+            <ToggleGroup fx:id="roomType" />
+         </toggleGroup></RadioButton>
+         <RadioButton fx:id="ac" layoutX="252.0" layoutY="117.0" mnemonicParsing="false" onAction="#setRoomPrice" selected="true" text="A/C" toggleGroup="$roomType" />
+         <RadioButton fx:id="vip" layoutX="252.0" layoutY="153.0" mnemonicParsing="false" onAction="#setRoomPrice" text="VIP" toggleGroup="$roomType" />
+         <Label layoutX="481.0" layoutY="29.0" text="Room Information">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <Separator layoutX="390.0" layoutY="37.0" prefHeight="3.0" prefWidth="80.0" />
+         <Separator layoutX="628.0" layoutY="39.0" prefHeight="3.0" prefWidth="80.0" />
+         <SplitMenuButton fx:id="building" layoutX="540.0" layoutY="80.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="145.0" text="Select">
+            <items>
+               <MenuItem fx:id="A" mnemonicParsing="false" onAction="#menuSelected" text="A" />
+               <MenuItem fx:id="B" mnemonicParsing="false" onAction="#menuSelected" text="B" />
+            <MenuItem fx:id="C" mnemonicParsing="false" onAction="#menuSelected" text="C" />
+            </items>
+         </SplitMenuButton>
+         <Label layoutX="425.0" layoutY="84.0" text="Building" />
+         <Label layoutX="425.0" layoutY="124.0" text="Floor" />
+         <Label layoutX="425.0" layoutY="164.0" text="Room No." />
+         <SplitMenuButton fx:id="room" layoutX="540.0" layoutY="160.0" mnemonicParsing="false" onAction="#setRooms" onContextMenuRequested="#setRooms" onMouseClicked="#setRooms" onMouseDragEntered="#setRooms" onMouseDragged="#setRooms" onMouseEntered="#setRooms" onMousePressed="#setRooms" onMouseReleased="#setRooms" prefHeight="27.0" prefWidth="145.0" text="Select">
+            <items>
+               <MenuItem fx:id="one" mnemonicParsing="false" onAction="#menuSelected" />
+               <MenuItem fx:id="two" mnemonicParsing="false" onAction="#menuSelected" />
+            <MenuItem fx:id="three" mnemonicParsing="false" onAction="#menuSelected" />
+            <MenuItem fx:id="four" mnemonicParsing="false" onAction="#menuSelected" />
+            </items>
+         </SplitMenuButton>
+         <SplitMenuButton fx:id="floor" layoutX="540.0" layoutY="120.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="145.0" text="Select">
+            <items>
+               <MenuItem fx:id="first" mnemonicParsing="false" onAction="#menuSelected" text="1" />
+               <MenuItem fx:id="second" mnemonicParsing="false" onAction="#menuSelected" text="2" />
+            <MenuItem fx:id="third" mnemonicParsing="false" onAction="#menuSelected" text="3" />
+            </items>
+         </SplitMenuButton>
+         <Label layoutX="425.0" layoutY="204.0" text="Price" />
+         <TextField fx:id="price" disable="true" layoutX="540.0" layoutY="200.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="27.0" prefWidth="145.0" text="1000">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="20.0" />
+         </padding></TextField>
+      <Button fx:id="save" layoutX="540.0" layoutY="276.0" mnemonicParsing="false" onAction="#addPatient" prefHeight="31.0" prefWidth="92.0" text="SAVE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Label fx:id="error" alignment="CENTER" contentDisplay="CENTER" layoutX="449.0" layoutY="357.0" prefHeight="27.0" prefWidth="287.0" />
+      <Label layoutX="549.0" layoutY="205.0" opacity="0.39" prefHeight="17.0" prefWidth="22.0" text="₹" />
+      </children>
+   </AnchorPane>

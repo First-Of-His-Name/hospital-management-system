@@ -1,0 +1,13 @@
+.button {
+    -fx-background-color: #C0E7F8;
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: black ;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-font-family: "Arial";
+    -fx-font-size: 13px;
+}
+.root{
+	-fx-background-image: url("background.jpg");
+	-fx-background-size: stretch ;
+}
